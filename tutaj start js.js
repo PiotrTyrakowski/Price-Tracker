@@ -1,2 +1,2 @@
 //tutaj start js
-jkkj
+jkkjfsdfds
