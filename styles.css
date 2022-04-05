@@ -1,14 +1,20 @@
-.lista {
-    width: 1002px;
-    height: 918px;
-    display: flex;
-    flex-wrap: wrap;
-
+table{
+    width:30%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: 1px solid black;
 }
-
-.krypto {
-    height: 100px;
-    width: 1000px;
-    border: solid black 1px;
-
+thead{                
+    color: white;
+    font-size: larger;
+    background-color: rgb(49, 49, 49)
+}
+tbody tr td, th{
+    font-family: Trebuchet MS;
+    border: 1px solid black;
+    height: 50px;
+    text-align: center;
+}
+tbody tr:nth-child(2n){
+    background-color: rgb(188, 188, 188)
 }
