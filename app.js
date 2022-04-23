@@ -16,6 +16,12 @@
                     }
                 }
             }
+            function numberWithSpaces(x) {
+                var parts = x.toString().split(".");
+                parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+                return parts.join(".");
+            }
+
             
             function insertData(){
                 for(let i = 0; i < currency.length; i++){
@@ -25,7 +31,7 @@
                         .then((data) => {
                             //TODO: dodac rank, market cap i jakos poprawic pobieranie z api zeby wygladalo lepiej xD
                             let logo = '<img src="images/' + data.id + '.png" width=50 heigth=50/>'
-                            tbdata = [0, logo , data.id, data.market_data.current_price.pln, 0]
+                            tbdata = [data.market_data.market_cap_rank, logo , data.id, numberWithSpaces(data.market_data.current_price.pln) + " zl", numberWithSpaces(data.market_data.market_cap.pln) + " zl"]
                             console.log(currency[i] + " : " + data.market_data.current_price.pln + " zl");
                             document.getElementById(currency[i] + 'data').childNodes[j].innerHTML = tbdata[j]
                         })
