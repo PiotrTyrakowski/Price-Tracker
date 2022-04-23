@@ -23,8 +23,9 @@
                         const info = fetch(currencyAPI + currency[i])
                         .then(response  => response.json())
                         .then((data) => {
-                            //TODO: dodac rank, logo, market cap i jakos poprawic pobieranie z api zeby wygladalo lepiej xD
-                            tbdata = [0, 0,data.id, data.market_data.current_price.pln, 0]
+                            //TODO: dodac rank, market cap i jakos poprawic pobieranie z api zeby wygladalo lepiej xD
+                            let logo = '<img src="images/' + data.id + '.png" width=50 heigth=50/>'
+                            tbdata = [0, logo , data.id, data.market_data.current_price.pln, 0]
                             console.log(currency[i] + " : " + data.market_data.current_price.pln + " zl");
                             document.getElementById(currency[i] + 'data').childNodes[j].innerHTML = tbdata[j]
                         })
