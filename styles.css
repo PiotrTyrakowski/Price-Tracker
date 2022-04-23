@@ -1,20 +1,75 @@
-table{
-    width:30%;
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@300&family=Manrope:wght@300&display=swap');
+
+:root {
+    --black: #1a1a1d;
+    --grey: #4E4E50;
+    --red_main: #C3073F;
+    --red_sub: #b80c3f;
+    --white: #E3E2DF;
+    --white_hov: #d6d6d6;
+
+}
+
+body {
+    background-color: var(--black);
+    font-family: 'Exo', sans-serif;  /* Imported two fonts Exo&Manrope up to decide*/
+
+}
+
+table {
+    width: 40%;
     margin: 0 auto;
     border-collapse: collapse;
-    border: 1px solid black;
+    border: 1px solid var(--black);
 }
-thead{                
-    color: white;
+
+caption {
+    color: var(--black);
+    background-color: var(--white);
+    border: none;
     font-size: larger;
-    background-color: rgb(49, 49, 49)
+    padding: 5px;
+    font-weight: bold;
 }
-tbody tr td, th{
-    font-family: Trebuchet MS;
-    border: 1px solid black;
+
+thead {
+    color: var(--white);
+    font-size: larger;
+    background-color: var(--red_main)
+}
+
+tbody tr td,
+th {
+    border: 1px solid var(--black);
     height: 50px;
     text-align: center;
 }
-tbody tr:nth-child(2n){
-    background-color: rgb(188, 188, 188)
+
+td:nth-child(n+4) {
+    cursor: pointer;
+    /* only for future development when implementing graphs */
+}
+
+tbody tr:nth-child(2n) {
+    background-color: var(--red_main);
+}
+
+tbody tr:nth-child(2n):hover {
+    background-color: var(--red_sub)
+}
+
+tbody tr:nth-child(2n-1) {
+    background-color: var(--white);
+}
+
+tbody tr:nth-child(2n-1):hover {
+    background-color: var(--white_hov);
+}
+
+tbody tr:nth-child(2n) td {
+    color: var(--white);
+}
+
+tbody tr:nth-child(2n-1) td {
+    color: var(--black)
 }
